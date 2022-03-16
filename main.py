@@ -1,5 +1,5 @@
 import telebot
-from config import TOKEN, API_KEY, keys
+from config import TOKEN, keys
 from extensions import APIException, APIRequest
 
 
@@ -27,7 +27,6 @@ def values(message: telebot.types.Message):
 
 @bot.message_handler(content_types=['text', ])
 def convert(message: telebot.types.Message):
-    # долларUSD рубльRUB 1
     try:
         vls = message.text.split(' ')
 
