@@ -9,7 +9,7 @@ class APIException(Exception):
 
 class APIRequest:
     @staticmethod
-    def conv(base: str, quote: str, amount: str):
+    def get_price(base: str, quote: str, amount: str):
         if base == quote:
             raise APIException(f'Нельзя конвертировать валюту "{base}" саму в себя...')
 

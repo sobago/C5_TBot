@@ -34,7 +34,7 @@ def convert(message: telebot.types.Message):
             raise APIException('Некорректное количество параметров /help')
 
         base, quote, amount = vls
-        total = APIRequest.conv(base.lower(), quote.lower(), amount)
+        total = APIRequest.get_price(base.lower(), quote.lower(), amount)
     except APIException as e:
         bot.reply_to(message, f'Ошибка пользователя:\n{e}')
     except Exception as e:
